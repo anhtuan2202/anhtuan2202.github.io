@@ -4,8 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+        left: 0;
+        top: 60px; 
+    }
+    
+    .navbar input[type="checkbox"]:checked ~ ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+    </style>
 </head>
 <body>
-    Lần đầu tôi viết deploy
+    <header>
+        <div class="logo">LOGO</div>
+        <nav class="navbar">
+            
+            <label for="menu-toggle" class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#">Dịch Vụ</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
 </body>
 </html>
